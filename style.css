@@ -1,0 +1,193 @@
+:root {
+  --primary-color: #4aa3df;
+  --bg-light: #f6fbff;
+  --text-dark: #2c2c2c;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--text-dark);
+  background: #fff;
+  padding-top: 72px;
+}
+
+/* NAVBAR */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
+}
+
+.logo {
+  height: 50px;
+    width: auto;
+    border-radius: 20px;
+}
+.navbar.hide {
+  transform: translateY(-100%);
+}
+
+.nav-link {
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, var(--bg-light), #ffffff);
+  padding: 90px 0;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 600px;
+}
+
+/* BUTTON */
+.btn-primary-custom {
+  background: var(--primary-color);
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.btn-primary-custom:hover {
+  opacity: 0.9;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 0;
+}
+
+.section-light {
+  background: var(--bg-light);
+}
+
+/* CARDS */
+.soft-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px;
+  height: 100%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-4px);
+}
+
+/* GALLERY */
+.gallery-img {
+  border-radius: 14px;
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* DONATION */
+.qr-box {
+  width: 170px;
+  height: 170px;
+  border-radius: 14px;
+  border: 2px dashed var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map{
+    border-radius: 25px;
+    height: 300px;
+    border: none;
+}
+
+
+/* FOOTER */
+footer {
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* SKIP LINK */
+.visually-hidden-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  z-index: 10000;
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  font-size:24px;
+  background:#25D366;
+  color:#fff;
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-float {
+    bottom:50px;
+    right:50px;
+    font-size:28px;
+    width:55px;
+    height:55px;
+  }
+}
+
+
+.contdet {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: all 0.3s ease, font-size 0.3s;
+}
+
+@media (min-width: 768px) {
+    .contdet {
+        width: 50%;
+    }
+}
+
+
+.contdet:hover {
+    color: var(--base-color);
+    font-size: 2.2rem;
+    font-weight: 800;
+    cursor: pointer;
+   transition: 0.6s!important;
+    transform: scale(1.2)!important;
+
+}

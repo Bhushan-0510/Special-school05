@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Programs – Special Children School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: var(--primary-color)">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html"><img class="logo" style="margin-right: 20px;" src="images/logo.png" alt="Special Children School Logo">मूकबधिर निवासी विद्यालय</a>
+    <button class="navbar-toggler" aria-label="Toggle navigation"
+      data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="donation.html">Donate</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<section class="section section-light">
+  <div class="container d-flex flex-column align-items-center">
+    <h1 class="mb-4" data-aos="fade-up">आमचे उपक्रम</h1>
+
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="soft-card">
+          <h2 class="h5">विशेष शिक्षण</h2>
+          <p>मूक व बधिर मुलांसाठी खास अभ्यासक्रम, वैयक्तिक लक्ष आणि समजण्यास सोप्या शिकवण्याच्या पद्धती.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="soft-card">
+          <h2 class="h5">सांकेतिक भाषा प्रशिक्षण</h2>
+          <p>मुलांना प्रभावी संवाद साधता यावा यासाठी सांकेतिक भाषेचे नियमित प्रशिक्षण.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="soft-card">
+          <h2 class="h5">जीवन कौशल्य विकास</h2>
+          <p>दैनंदिन जीवनासाठी आवश्यक कौशल्ये, आत्मविश्वास आणि स्वावलंबन वाढवण्यासाठी उपक्रम.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="text-center py-3">© 2026 Special Children School</footer>
+
+<!-- same JS as above -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const collapse = document.querySelector('.navbar-collapse');
+      if (collapse.classList.contains('show')) new bootstrap.Collapse(collapse).hide();
+    });
+  });
+
+  window.addEventListener('load', () => window.scrollTo(0,0));
+
+  const page = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute("href") === page) link.classList.add("active");
+  });
+
+  let lastScroll = 0;
+  const navbar = document.getElementById("mainNavbar");
+  window.addEventListener("scroll", () => {
+    const current = window.pageYOffset;
+    if (current > lastScroll && current > 100) navbar.classList.add("hide");
+    else navbar.classList.remove("hide");
+    lastScroll = current;
+  });
+
+  AOS.init({ once: true });
+</script>
+</body>
+</html>

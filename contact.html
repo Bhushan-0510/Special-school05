@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact – Special Children School</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: var(--primary-color)">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><img class="logo" style="margin-right: 20px;"
+                    src="images/logo.png" alt="Special Children School Logo">मूकबधिर निवासी विद्यालय</a>
+            <button class="navbar-toggler" aria-label="Toggle navigation" data-bs-toggle="collapse"
+                data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donation.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <section class="section">
+            <div class="container">
+                <div class="d-flex flex-column align-items-center mb-7">
+                    <h1 class="mb-4" data-aos="fade-right" data-aos-delay="100">संपर्क साधा</h1>
+                    <h5 data-aos="fade-right" data-aos-delay="200">अधिक माहिती, प्रवेश प्रक्रिया किंवा सहकार्याबाबत
+                        आम्हाला संपर्क करा. आम्ही आपली मदत करण्यासाठी
+                        सदैव तयार आहोत.</h5>
+                </div>
+                <div class="container row">
+                    <div class="contact col-lg-6 col-md-12 col-sm-12mx-auto mt-4" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <a href="tel:+918956422281" class="contdet fw-bold me-3" data-aos="fade-down"
+                            data-aos-delay="400" data-aos-duration="3000"><img width="auto" height="28"
+                                src="https://img.icons8.com/fluency/48/phone--v1.png"
+                                alt="phone--v1" />+918956422281</a><br><br>
+                        <a href="mailto:bhushangalgunde5@gmail.com" class="contdet fw-bold" data-aos="fade-down"
+                            data-aos-delay="600" data-aos-duration="3000"><img width="auto" height="28"
+                                src="https://img.icons8.com/parakeet/48/new-post.png"
+                                alt="new-post" />bhushangalgunde5@gmail.com</a>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.2723213088266!2d77.00816845486825!3d20.707272295143376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd72f8df9a02c27%3A0x299ef29fcd3db1a7!2sSmt.%20L.R.T.%20College%20of%20Commerce%20Akola!5e1!3m2!1sen!2sin!4v1767443121415!5m2!1sen!2sin"
+                            width="100%" height="450" style="border:0; border-radius: 12px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-3">© 2026 Special Children School</footer>
+    <!-- FLOATING WHATSAPP -->
+    <a class="whatsapp-float" href="https://wa.me/918956422281?text=नमस्कार,%20मी%20आपल्या%20मूक%20व%20बधिर%20मुलांच्या%20शाळेबद्दल%20वेबसाइटवरून%20माहिती%20पाहिली.%20कृपया%20शाळेबद्दल%20अधिक%20माहिती%20आणि%20संपर्क%20प्रक्रियेबाबत%20मार्गदर्शन%20करावे.%20धन्यवाद.
+" target="_blank">💬</a>
+
+    <!-- same JS block -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const collapse = document.querySelector('.navbar-collapse');
+                if (collapse.classList.contains('show')) new bootstrap.Collapse(collapse).hide();
+            });
+        });
+
+        window.addEventListener('load', () => window.scrollTo(0, 0));
+
+        const page = location.pathname.split("/").pop() || "index.html";
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute("href") === page) link.classList.add("active");
+        });
+
+        let lastScroll = 0;
+        const navbar = document.getElementById("mainNavbar");
+        window.addEventListener("scroll", () => {
+            const current = window.pageYOffset;
+            if (current > lastScroll && current > 100) navbar.classList.add("hide");
+            else navbar.classList.remove("hide");
+            lastScroll = current;
+        });
+
+        AOS.init({ once: true });
+    </script>
+</body>
+
+</html>
