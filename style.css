@@ -184,7 +184,7 @@ main {
 
 .contdet:hover {
     color: var(--base-color);
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     font-weight: 800;
     cursor: pointer;
    transition: 0.6s!important;
