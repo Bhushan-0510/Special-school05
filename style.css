@@ -25,6 +25,12 @@ body {
     width: auto;
     border-radius: 20px;
 }
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-brand .logo, .navbar .logo { margin-right: 10px; }
 .navbar.hide {
   transform: translateY(-100%);
 }
@@ -303,3 +309,72 @@ main {
 }
 .lb-touch-zone > div { flex: 1; }
 .lb-touch-hint { pointer-events: none; }
+
+
+
+/* Home Slider */
+.home-slider {
+  margin-top: 0;
+}
+
+/* Make carousel items a centered flex container so images can scale
+   to fit vertically without being cropped top/bottom on wide screens */
+.home-slider .carousel-item {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.home-slider .carousel-item img { display: none; }
+
+/* overlay for better caption contrast */
+.home-slider .slide-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 60%);
+  z-index: 1;
+}
+
+.home-slider .carousel-caption {
+  position: relative; z-index: 2; bottom: 20%;
+  text-align: left;
+}
+.home-slider .carousel-caption h2 {
+  font-size: 2rem; font-weight: 700; color: #fff; text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+.home-slider .carousel-caption p { color: rgba(255,255,255,0.92); font-size: 1rem; }
+
+/* Ken Burns subtle zoom */
+.home-slider .carousel-item { transform-origin: center center; }
+.home-slider .carousel-item.active,
+.home-slider .carousel-item-next,
+.home-slider .carousel-item-prev { animation: kenburns 12s ease-in-out infinite; }
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Mobile adjustments: reduce carousel height for small screens */
+@media (max-width: 768px) {
+  .home-slider .carousel-item { height: 45vh; }
+  .home-slider .carousel-item img { max-height: 100%; }
+  .home-slider {
+    margin-top: 0px;
+    margin-bottom: auto;
+  }
+}
+
+/* Per-slide focal adjustments to prevent cropping of important areas */
+.home-slider .carousel-item.slide-1 { background-position: center 35%; }
+.home-slider .carousel-item.slide-2 { background-position: center 28%; }
+.home-slider .carousel-item.slide-3 { background-position: center 28%; }
+.home-slider .carousel-item.slide-4 { background-position: center 22%; }
+.home-slider .carousel-item.slide-5 { background-position: center 30%; }
+.home-slider .carousel-item.slide-6 { background-position: center 32%; }
+.home-slider .carousel-item.slide-6 { background-position: center 22%; }
